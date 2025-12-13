@@ -1,4 +1,35 @@
-# Today's CyberSecurity Professional
+# Domain 1.0 General Security Concepts
+
+## Implementing Security Controls
+
+### Gap analysis
+
+Cybersecurity professional conduct gap analysis to evaluate the security control. During the gap analysis, they will define the control objective for the organization. Gaps identified during a gap analysis should be treated as potential risks and remediated as time and resources permit.
+
+### Security Control Categories
+
+- **_Technical controls_** enforce confidentiality, integrity, and availability in the digital space. eg. firewall rules, access control lists, intrusion prevention systems, and encryption.
+
+- **_Operational controls_** include the processes that we put in place to manage technology in a secure manner. These include user access
+reviews, log monitoring, and vulnerability management.
+
+- **_Managerial controls_** are procedural mechanisms that focus on the mechanics of the risk management process. eg.  periodic risk assessments, security planning exercises, organization's change management, service acquisition, and project management practices.
+
+- **_Physical controls_** are security controls that impact the physical world. eg. fences, perimeter lighting, locks, fire suppression systems, and burglar alarms.
+
+### Security Control Types
+
+- **_Preventive controls_** intend to stop a security issue before it occurs. eg. Firewalls and encryption 
+
+- **_Deterrent controls_** seek to prevent an attacker from attempting to violate security policies. eg. guard dogs and barbed wire fences
+
+- **_Detective controls_** identify security events that have already occurred. eg. Intrusion detection systems
+
+- **_Corrective controls_** remediate security issues that have already occurred. eg. Restoring backups after a ransomware attack
+
+- **_Compensating controls_** are controls designed to mitigate the risk associated with exceptions made to a security policy
+
+- **_Directive controls_** inform employees and others what they should do to achieve security objectives. eg. Policies and procedures
 
 ## CIA and DAD Triad
 
@@ -44,36 +75,7 @@ Data breaches have significant and diverse impacts on organizations. When an org
 >
 >Risks often cross categories
 
-## Implementing Security Controls
 
-### Gap analysis
-
-Cybersecurity professional conduct gap analysis to evaluate the security control. During the gap analysis, they will define the control objective for the organization. Gaps identified during a gap analysis should be treated as potential risks and remediated as time and resources permit.
-
-### Security Control Categories
-
-- **_Technical controls_** enforce confidentiality, integrity, and availability in the digital space. eg. firewall rules, access control lists, intrusion prevention systems, and encryption.
-
-- **_Operational controls_** include the processes that we put in place to manage technology in a secure manner. These include user access
-reviews, log monitoring, and vulnerability management.
-
-- **_Managerial controls_** are procedural mechanisms that focus on the mechanics of the risk management process. eg.  periodic risk assessments, security planning exercises, organization's change management, service acquisition, and project management practices.
-
-- **_Physical controls_** are security controls that impact the physical world. eg. fences, perimeter lighting, locks, fire suppression systems, and burglar alarms.
-
-### Security Control Types
-
-- **_Preventive controls_** intend to stop a security issue before it occurs. eg. Firewalls and encryption 
-
-- **_Deterrent controls_** seek to prevent an attacker from attempting to violate security policies. eg. guard dogs and barbed wire fences
-
-- **_Detective controls_** identify security events that have already occurred. eg. Intrusion detection systems
-
-- **_Corrective controls_** remediate security issues that have already occurred. eg. Restoring backups after a ransomware attack
-
-- **_Compensating controls_** are controls designed to mitigate the risk associated with exceptions made to a security policy
-
-- **_Directive controls_** inform employees and others what they should do to achieve security objectives. eg. Policies and procedures
 
 ## Data Protection
 
