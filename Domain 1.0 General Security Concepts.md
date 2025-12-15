@@ -252,3 +252,183 @@ Measures to protect tangible assets (buildings, equipment, people) from harm or 
 3. **Honeyfiles** is a decoy fles to detect unauthorized access or data breaches. It attracts the attacker with more "honey", like fake information or credential, eg. password.txt. When someone get access to the file, an alert might be sent.
 
 4. **Honeytokens** is a fake data to alert administrators when accessed or used. For example, an fake, unused API credential stored into the public cloud share. 
+
+## 1.3 Explain the importance of change management processes  and the impact to security. 
+
+### Change Management
+
+Orchestrated strategy to transition teams, departments, and organizations from existing state to a more desirable future state.
+
+It is necessary in modern business environments due to constant changes. Change is essential but requires:
+
+- Precision
+- Planning
+- Structured approach
+
+For example, Frequency, duration, installation process, rollback procedures
+
+#### Challenge of Change
+
+- Unplanned or poorly coordinated changes can lead to resistance and confusion
+
+- Even seemingly simple changes, like software upgrades, can cause issues
+
+- Existing processes become disrupted by changes, impacting efficiency
+
+- Sometimes extremely difficult to implement if the change management is not exist because it is hard to change corporate culture
+
+#### Change Approval and Assessment Process
+
+A formal process for managing change to avoid downtime, confusion and mistakes
+
+1. Complete the request forms
+
+2. Determine the purpose of the change
+
+3. Identify the scope of the change
+
+4. Schedule the date and time of the change
+
+5. Determine affected system and the impact
+
+6. Analyze the risk associated to the changes
+
+7. Get approval from the change control board (CAB)
+
+#### Change Approval and Assessment
+
+- Changes must be approved and assessed
+
+- Organizational processes and procedures for change approval
+
+- Assessment evaluates value and potential disruptions
+
+
+#### Ownership
+
+- Individual or team responsible for initiating change request. They own the process but usually don't perform the actual change.
+
+- The process updates are provided by the owner and it is their responsibility to ensure the process is followed and acceptable.
+
+
+#### Stakeholders
+
+- Individuals or teams with a vested interest in the proposed change. They might directly impacted or involved in assessment and implementation.
+
+- These individuals or teams must be consulted. And their feedback and concerns should be considered.
+
+#### Impact analysis
+
+- Determin a risk value, ie. high, medium, low
+
+- Assesses potential fallout, immediate effects, long-term impacts
+
+- Identifies challenges and prepares for maximizing benefits
+
+Example:
+
+- The risk can be minor or far-reaching, like the fix breaks something else, or OS failures, or data corruption
+
+- The risk if not making the change, like Security Vulnerability, Application Vulerability, Unexpected downtime
+
+#### Sandbox Test Result
+
+- Sandbox is a testing environment without any connection to the real-world or production environment. 
+
+- It uses to test and confirm before make a change to a production eg. Try the upgrade, Apply the patch. 
+
+- We can also check the backout plan to see if everythings can back to original if something does go wrong. 
+
+#### Backout Plan
+
+- Pre-determined strategy to revert systems to their original state in case of issues during change implementation.
+
+- Acts as a safety net for ensuring quick return to normal operations
+
+Remark: Always have a backup
+
+#### Scheduled Maintenance Window
+
+- Designated timeframes for implementing changes
+
+- Reduces potential disruptions to daily operations
+
+- Allows flexibility for emergency changes
+
+#### Standard Operating Procedures (SOPs)
+
+Since the change management might affect anyone in the company, the process must be well-documented.
+
+- Detailed step-by-step instructions for specific tasks and should be available on the intranet
+
+- It ensures consistency, efficiency, and reduces errors in change implementation within the organization
+
+- Should be updated over-time
+
+### Technical Change Management
+
+- Allow Lists and Deny Lists
+
+   - **Allow List** specifies entities permitted to access a resource 
+
+   - **DenyList** lists entities prevented from accessing a resource
+
+- Restricted Activities (What we can do during the change window)
+
+   - Certain tasks labeled as 'restricted' due to their impact on system health or security
+
+   - Verify proposed changes for any restricted activities
+
+   - Preventdata breaches and operational disruptions by understanding restrictions
+
+- Downtime
+
+   - Any change,even minor, carries the risk of causing downtime
+
+   - Estimate potential downtime and assess its negative effects against benefits
+
+   - Schedule changes during maintenance windows to minimize impacts on end users, eg. non-production hours
+
+   - If prevent any downtime is needed, secondary system is needed for switching during the change (part of the backout plan)
+
+- Service and Application Restarts
+
+   - Some changes,like installing security patches, require service or application restarts
+
+- Dependencies
+
+   - Interconnected systems create dependencies, where changes in one area affect others.
+
+   - Mapping dependencies is crucial before implementing changes
+
+- Legacy Applications
+
+   - Older software or systems still in use due to functionality and user needs
+
+   - Older software or systems still in use due to functionality and user needs
+
+   - Minor updates can lead to malfunctions or crashes, so assess their compatibility.
+
+- Documentation
+
+   - Documentation can be outdated very quickly. Therefore, all accompanying documentation should be updated when implementing a change.
+
+   - Updates should reflect the implementation of the change, from minor configurations to major network overhauls eg.
+
+      - Updating diagrams to provide a visual representation of system architecture
+
+      - Revising policies and procedures to address issues or improvements
+
+      - Updating change requests and trouble tickets to reflect successful completion
+
+- Version Control
+
+   - Tracks and manages changes in documents, software, and other files eg. Router Configuration, Windows OS Patch, Application registry entries
+
+   - Allows multiple users to collaborate and revert to previous versions when needed
+
+   - Ensures changes do not create chaos and helps track project evolution
+
+   - Preserves past iterations and ensures continuity and stability
+
+## Explain the importance of using appropriate cryptographic solutions
