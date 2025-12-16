@@ -431,4 +431,51 @@ Since the change management might affect anyone in the company, the process must
 
    - Preserves past iterations and ensures continuity and stability
 
-## Explain the importance of using appropriate cryptographic solutions
+## 1.4 Explain the importance of using appropriate cryptographic solutions
+
+### Public Key Infrastructure 
+
+- An entire system involving hardware, software, policies, procedures, and people based on **asymmetric encryption**.
+
+- Facilitates secure data transfer, authentication, and encrypted communications eg. Used in HTTPS connections on websites
+
+#### Symmetric encryption
+
+- A single key which perform the encryption and decryption. You will need another key if goes out
+
+- The symmetric encryption doesn't scale very well as the difficulty of distribution. However, it is very fast to use as it has less overhead than asymeetric key. It often combined with asymmetric encryption
+
+
+#### Asymmetric encryption
+
+- It is a public key cryptography, ie. two keys (public and private key). 
+
+- The **private key** should keep as secret while the **public key** should available to anyone
+
+- The private should be the only key that can decrypt the data encrypted by the public key.
+ 
+- Key Generation will build both public and private keys which requires lots of randomization, large prime number and maths
+
+   - Everyone can have the public key but only the owner can have the private key
+
+   - ![key_generation](/images/domain_1/key_generation.png)
+
+- Asymmetric Encryption:
+
+   - ![asymmetric_encryption](/images/domain_1/asymmetric_encryption.png)
+
+#### Key Escrow
+
+- Storage of cryptographic keys in a secure, third-party location (escrow)
+
+- Enables key retrieval in cases of key loss or for legal investigations
+
+- Relevance in PKI 
+   - In PKI,key escrow ensures that encrypted data is not permanently inaccessible 
+   - Useful when individuals or organizations lose access to their encryption keys
+
+- Security Concerns
+   - Malicious access to escrowed keys could lead to data decryption
+   - Requires stringent security measures and access controls
+
+### Encrpting Data
