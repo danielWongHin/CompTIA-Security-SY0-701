@@ -103,7 +103,74 @@ Challenges of Microservices:
 
 ### Network Infrastructure
 
+Network Infrastructure is the Backbone of modern organizations. It comprises hardware, software, services, and facilities for network support and management.
 
+#### Physical Separation
+
+- Security measures to protect sensitive information eg. Air gap between Switch A and Switch B; Web servers and database server are in the seperated rack.
+
+- Devices must be connected to provide communication, eg. Direct connect, or another switch or router
+
+- Isolates a system by physically disconnecting it from all networks
+
+- Physical Segmentation:
+
+    - Separate devices with multiple units or separate infrastructure
+
+#### Logical segmentation with VLANs
+
+- Logical segmentation establishes boundaries within a network to restrict access to certain areas
+
+- It is implemented by using firewalls, VLANs, and network devices
+
+- The devices cannot communicate between VLANs without a Layer 3 device / router
+
+![Vlan](/images/domain_3/Vlan.png)
+
+#### Software-defined Network (SDN)
+
+- Revolutionary approach to network management
+
+- Enables dynamic, programmatically efficient network configuration
+
+- Improves network performance and monitoring
+
+- Reduces complexity in static and inflexible network architectures
+
+- Provides a centralized view of the entire network
+
+- SDN Architecture
+
+    - Decouples network control and forwarding functions
+
+    - Three Distinct Planes:
+
+        1. Infrastructure layer / Data plane
+            
+            - Process the network frames and packets
+
+            - Forwarding, trunking, encrypting, NAT
+
+            - Makes decisions based on protocols like IP and Ethernet
+
+        2. Control layer / Control plane
+
+            - Manages the actions of the data plane
+
+            - Dictates traffic flow across the entire network
+
+            - Routing tables, session tables, NAT tables
+            
+            - Dynamic routing protocol updates
+
+        3. Application layer / Management plane
+            
+            - Configure and manage the device
+
+            - SSH, browser, API
+
+    ![sdn](/images/domain_3/sdn.png)
+    
 ## 3.3. Compare and contrast concepts and strategies to protect data
 
 ### Data Breach
@@ -144,3 +211,4 @@ We can use different security controls to safeguard data in all of these states
 | Data Minimization             | seek to reduce risk by reducing the amount of sensitive information that we maintain on a regular basis.|Destroy data when it is no longer necessary; Hashing, Tokenization, Masking|
 | Access Restrictions           | security measures that limit the ability of individuals or systems to access sensitive information or resources | Geographic restrictions; Permission restrictions |
 | Segmentation and Isolation    | limit the access to sensitive systems based on their network location. | Seperate network for sensitive data or isolate the network from public| 
+
