@@ -453,8 +453,419 @@ IOT Risks:
     - Challenges in Patching
 
         - Updates face operational constraints; OTA updates demand meticulous planning and security measures
-        
+
             - Over-the-Air (OTA) Updates:   Patches are delivered and installed remotely
+
+## 3.2 Given a scenario, apply security principles to secure enterprise infrastructure.
+
+### Secure Infrastructures
+
+Services may require their own security technologies, eg. Firewalls, Honeypots, jump server, load balancers, sensors
+
+#### Security Zones
+
+Security Zones is isolate devices with similar security requirements. Each area of the network is associated with a zone,eg. Trusted, untrusted; internal, external; Inside, Internet, Servers, Databases, Screened
+
+![security_zone](/images/domain_3/security_zone.png)
+
+#### Attack Surface
+
+Refers to points where unauthorized access or data extraction can occur. A larger attack surface increases the risk of vulnerabilities.
+
+Identify and mitigate vulnerabilities to reduce the attack surface. Regularly assess and minimize the attack surface for network security
+
+Can be minimized by
+
+- Restricting Access
+
+- Removing unnecessary software
+
+- Disabling unused protocols
+
+Think of threat vector as the "how" of an attack, whereas the attack surface is the "where" of the attack
+
+#### Connectivity
+
+- Choose connectivity methods that influence network performance, reliability, and security
+
+- Wired (e.g., Ethernet) offers stability and speed but restricts mobility
+
+- Wireless (e.g., Wi-Fi) provides flexibility but may suffer from interference and security issues
+
+- Consider factors like scalability, speed, security, and budget constraints when choosing connectivity methods
+
+- Network-level encryption, eg, IPsec tunnels, VPN connections
+
+- Application-level encryption
+
+### Intrusion Prevention
+
+Intrusion Detection Systems (IDS) and Intrusion Prevention Systems (IPS) are used to Identifying trends and Showcasing signatures
+
+#### Failure Mode
+
+Choose between "fail-open" and "fail-closed" modes to handle device failures
+
+- Fail-open: Allows traffic to pass during a failure, maintaining connectivity but reducing security
+
+- Fail-closed: Blocks all traffic during a failure, prioritizing security over connectivity
+
+The choice depends on the organization's security policy and the criticality of the network segment
+
+#### Intrusion Prevention Systems (IPS)
+
+- Logs, alerts, and takes action when it finds something suspicious or malicious
+
+- Scans traffic to look for malicious activity and takes action to stop it
+
+- Commonly **Active Monitoring**
+
+![IPS](/images/domain_3/IPS.png)
+
+#### Intrusion Detection System (IDS)
+
+- Logs or alerts that it found something suspicious or malicious
+
+- Three Types of Intrusion Detection Systems (IDS)
+        
+    - Network-based IDS (NIDS): Monitors the traffic coming in and out of a network
+
+    - Host-based IDS (HIDS):   Looks at suspicious network traffic going to or from a single or endpoint
+        
+    - Wireless IDS (WIDS):  Detects attempts to cause a denial of a service on a wireless network
+
+    - Commonly **Passive Monitoring**
+    
+- Intrusion detection systems operate either using signature-based or anomaly-based detection algorithms
+
+    - Signature-based IDS:  Analyzes traffic based on defined signatures and can only recognize attacks based on previously identified attacks in its database eg. Pattern-matching, Stateful-matching
+
+    - Anomaly-based IDS: Analyzes traffic and compares it to a normal baseline of traffic to determine whether a threat is occurring eg. Statistical, Protocol, Traffic, Rule or Heuristic, Application-based
+
+    ![IDS](/images/domain_3/IDS.png)
+
+### Network Appliances
+
+#### Jump Server
+
+Secure gateways for system administrators to access devices in different security zones. 
+
+- Control access and reduce the attack surface area
+
+- Offer protection against downtime and data breaches
+
+- Simplify logging and auditing
+
+- Speed up incident response during cyber-attacks
+
+- Streamline system management and maintenance
+
+- Host essential tools and scripts
+
+- Monitor system health for performance and security
+
+#### Proxy Servers
+
+Act as intermediaries between clients and servers
+
+- Provide content caching, requests filtering, and login management
+
+- Enhance request speed and reduce bandwidth usage
+
+- Add a security layer and enforce network utilization policies
+
+- Protect against DDoS attacks
+
+- Facilitate load balancing and user authentication
+
+- Handle data encryption and ensure compliance with data sovereignty laws
+
+**Forward Proxy/Internal Proxy**
+
+- Commonly used to protect and control user access to the Internet
+
+**Reverse Proxy**
+
+- Inbound traffic from the Internet to your internal service
+
+**Open Proxy**
+
+- A third-party, uncontrolled proxy. Often used to circumvent existing security controls
+
+**Application proxies**
+
+- Most proxies in use are application proxies, The proxy understands the way the application works and only know one application eg. HTTP
+
+- Many proxies are multipurpose proxies. eg. HTTP, HTTPS, FTP, etc.
+
+#### Load Balancing
+
+- Distributes workloads across multiple resources
+
+- Optimizes resource use, throughput, and response time
+
+- Prevents overloading of any single resource
+
+- Incoming requests are directed to capable servers
+
+#### Active/active and Active/Passive load balancing 
+
+Active/active load balancing
+
+- Configurable load: Manage across servers
+
+- TCP offload: Protocol overhead
+
+- SSL offload: Encryption/Decryption
+
+- Caching: Fast response
+
+- Prioritization: QoS
+
+- Content switching: Application-centric balancing
+
+Active/passive load balancing
+
+- Some servers are active while others are standby
+
+- If an active server fails, the passive server takes its place
+
+#### Sensors and collectors
+
+- Aggregate information from network devices
+
+- Built-in sensors, separate devices
+
+- Integrated into switches, routers, servers, firewalls, etc.
+
+Example of Sensors: Intrusion prevention systems, firewall logs,authentication logs, web server access logs, database transaction logs, email logs
+
+Example collectors: Proprietary consoles (IPS, firewall), SIEM consoles, syslog servers
+
+Many SIEMs include a correlation engine to compare diverse sensor data
+
+#### Port Security
+
+- A network switch feature that restricts device access to specific ports based on MAC addresses
+
+- Enhances network security by preventing unauthorized devices from connecting
+
+#### EAP (Extensible Authentication Protocol)
+
+- A framework for various authentication methods
+
+- Many different ways to authenticate based on RFC standards eg. EAP-MD5, EAP-TLS, EAP-TTLS, EAP-FAST, PEAP, EAP-LEAP
+
+- EAP integrates with 802.1X.
+
+#### IEEE 802.1X
+
+- Port-based Network Access Control mechanism based on the IEEE 802.1x standard
+
+- Modern NAC solutions build on 802.1x, enhancing features and capabilities
+
+- 802.1X prevents access to the network until the authentication succeeds
+
+- Used in conjunction with an authentication database eg. RADIUS, LDAP, TACACS+, Kerberos, etc.
+
+- IEEE 802.1X and EAP
+
+    - Supplicant - the client
+
+    - Authenticator - The device that provides access
+
+    - Authentication server - Validates the client credentials
+
+#### Firewall Types
+
+**Firewall**
+
+- A network security device or software that monitors and controls network traffic based on security rules
+
+- Dedicated devices for using Access Control Lists (ACLs) to protect networks
+
+- Protects networks from unauthorized access and potential threats
+
+- There are different types of firewalls:
+
+    - Packet Filtering Firewalls
+
+        - Inspect packet headers for IP addresses and port numbers
+
+        - Limited in inspection, operates at Layer 4 (Transport Layer)
+
+    - Stateful Firewalls
+        
+        - Track connections and requests, allowing return traffic for outbound requests
+
+        - Operates at Layer 4, with improved awareness of connection state
+
+    - Proxy Firewalls
+
+        - Make connections on behalf of endpoints, enhancing security
+
+        - Two Types of Proxy FirewallscSession layer(Layer 5) and Application layer (Layer 7)
+
+    - Kernel Proxy Firewalls
+
+        - Minimal impact on network performance, full inspection of packets at every layer
+        
+        - Placed close to the system they protect
+
+    - Layer based Firewalls
+        
+        - Layer 4 Firewall, Operates at the transport layer
+
+            - Filters traffic based on port numbers and protocol data
+        
+        - Layer 7 Firewall, Operates at the application layer
+
+            - Inspects, filters, and controls traffic based on content and data characteristics
+
+    - Unified Threat Management (UTM) Firewall
+        
+        - Combines multiple security functions in a single device
+        
+        - Functions include:
+
+            - firewall, intrusion prevention, antivirus, Spam filter, Router, Switch and IDS/IPS
+
+        - Reduces the number of devices
+        
+        - Are a single point of failure
+
+        - UTMs use separate individual engine
+
+            - NGFW uses a single engine
+
+    - Next Generation Firewall (NGFW)
+        
+        - Application-aware
+            
+            - distinguish between different types of traffic
+
+        - Conduct deep packet inspection and use signature-based intrusion protection
+
+        - Operate fast within minimal network performance impact
+
+            - Offer full-stack traffic visibility
+
+        - Can integrate with other security products
+
+            - Can be a problem if organizations become reliant on a single vendor due to firewall configurations tailored to one product line
+
+    - Web Application Firewall (WAF)
+        
+        - Focuses on inspecting HTTP traffic
+        
+        - Prevents common web application attacks like cross-site scripting and SQL injections
+        
+        - Can be placed
+            
+            - In-line (live attack prevention)
+
+                - Device sits between the network firewall and the web servers
+            
+            - Out of band (detection)
+
+                - Device receives a mirrored copy of web server traffic
+
+#### Secure Communication
+
+- Virtual Private Networks (VPNs)
+
+    - Extend private networks across public networks
+    
+    - Allow remote users to securely connect to an organization's network
+
+    - Can be configured as site-to-site, client-to-site, or clientless VPNs
+
+- Encrypted tunnel
+
+    - Keep data private across the public Internet； Encryption is the key
+
+    - Encrypt your data - Add new headers and trailers
+
+    - Decrypt on the other side - Original data is delivered
+
+- Types of VPN
+
+    - Site-to-Site VPN
+
+        - Connects two sites cost-effectively
+        - Replaces expensive leased lines
+        - Utilizes a VPN tunnel over the public internet           
+        - Encrypts and secures data between sites
+        - Slower, but more secure
+
+    - Client-to-Site VPN
+
+        - Connects a single host (e.g., laptop) to the central office
+        - Ideal for remote user access to the central network
+        - Options for full tunnel and split tunnel configurations
+
+    - Clientless VPN
+            
+        - Uses a web browser to establish secure, remote-access VPN
+        - No need for dedicated software or hardware client
+        - Utilizes HTTPS and TLS protocols for secure connections to websites
+    
+    - SSL/TLS VPN (Secure Sockets Layer VPN)
+
+        - Uses common SSL/TLS protocol (tcp/443), Therefore, no firewall issues
+
+        - Usually remote access communication
+
+        - No requirement for digital certificates or shared passwords (like IPSec), but we can use those if liked
+
+        - Can be run from a browser or from a (usually light) VPN client across many operation system
+
+        - On-demand access from a remote device: Software connects to a VPN concentrator, Some software can be configured as always-on
+
+        ![ssl_tls_vpn](/images/domain_3/ssl_tls_vpn.png)
+    
+    - Site-to-site IPsec VPN
+
+        - Always-on
+
+        - Firewalls often act as VPN concentrators; Probably already have firewalls in place
+
+        ![ipsec_vpn](/images/domain_3/ipsec_vpn.png)
+    
+    - SD-WAN (Software-Defined Wide Area Network)
+
+        - A virtualized approach to managing and optimizing wide area network connections
+
+        - Efficiently routes traffic between remote sites, data centers, and cloud environments
+
+        - It can increased agility, security, and efficiency for geographically distributed workforces
+
+        - Software-based architecture with control extracted from underlying hardware
+
+        - Utilizes centralized control function for intelligent traffic routing
+
+        - Use Cases
+
+            - Ideal for enterprises with multiple branch offices moving towards cloud-based services eg. IaaS, PaaS, SaaS
+    
+    - Secure Access Service Edge (SASE)
+
+        - A network architecture combining network security and WAN capabilities in a single cloud-based service
+
+        - used to addresse challenges of securing and connecting users and data across distributed locations
+
+        - Utilizes software-defined networking (SDN) for security and networking services from the cloud
+
+        - Components
+
+            - Firewalls
+            - VPNs
+            - Zero-trust network access
+            - Cloud Access Security Brokers (CASBs)
+
+        - Delivered through a common set of policy and management platforms
+
+        ![sase](/images/domain_3/sase.png)
 
 ## 3.3. Compare and contrast concepts and strategies to protect data
 
